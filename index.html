@@ -2,828 +2,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meghna & Bibin — Wedding</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=DM+Sans:wght@400;500;600&family=Playfair+Display:wght@400;500&display=swap" rel="stylesheet">
-
-<style>
-:root {
-  --white: #fff;
-  --ink: #302d2b;
-  --coral: #e87967;
-  --rose: #f6c7bd;
-  --blush: #fff3ef;
-  --muted: #81736e;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  background: var(--white);
-  color: var(--ink);
-  font-family: 'DM Sans', sans-serif;
-}
-
-.hero {
-  min-height: 760px;
-  height: 100svh;
-  max-height: 920px;
-  position: relative;
-  overflow: hidden;
-  background: #fff;
-}
-
-.hero-inner {
-  position: relative;
-  isolation: isolate;
-  width: min(1320px, 100%);
-  height: 100%;
-  min-height: 760px;
-  margin: 0 auto;
-}
-
-/* =========================
-   FLORAL ILLUSTRATIONS
-========================= */
-
-.floral {
-  position: absolute;
-  z-index: 0;
-  pointer-events: none;
-  opacity: .8;
-}
-
-.floral-left {
-  width: 260px;
-  left: -55px;
-  bottom: 15px;
-}
-
-.floral-top {
-  width: 150px;
-  top: 20px;
-  left: 41%;
-  opacity: .35;
-}
-
-.floral-right {
-  width: 205px;
-  right: -45px;
-  top: 38%;
-  opacity: .65;
-}
-
-.floral-bottom {
-  width: 160px;
-  right: 34%;
-  bottom: -65px;
-  opacity: .45;
-}
-
-.flower-detail {
-  position: absolute;
-  z-index: 1;
-  pointer-events: none;
-  color: var(--coral);
-  opacity: .65;
-}
-
-.flower-one {
-  top: 47%;
-  left: 3%;
-  font-size: 27px;
-}
-
-.flower-two {
-  top: 66%;
-  left: 49%;
-  font-size: 22px;
-}
-
-.flower-three {
-  top: 53%;
-  right: 3%;
-  font-size: 26px;
-}
-
-.flower-four {
-  top: 6%;
-  right: 40%;
-  font-size: 19px;
-}
-
-/* =========================
-   LEFT-SIDE HEADING
-========================= */
-
-.intro {
-  position: absolute;
-  z-index: 2;
-  top: 16%;
-  left: 8%;
-  width: 48%;
-}
-
-.eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-
-.eyebrow::before {
-  content: "";
-  width: 29px;
-  height: 1px;
-  background: var(--coral);
-}
-
-.heading {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(36px, 4vw, 57px);
-  font-weight: 400;
-  line-height: 1.28;
-  letter-spacing: -1px;
-}
-
-.script {
-  font-family: 'Allura', cursive;
-  font-weight: 400;
-  color: var(--coral);
-}
-
-.script-line {
-  font-family: 'Allura', cursive;
-  font-size: clamp(51px, 5vw, 72px);
-  line-height: 1.08;
-}
-
-.learn-more {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  min-height: 43px;
-  padding: 0 23px;
-  margin-top: 27px;
-  border: 1px solid var(--coral);
-  background: white;
-  color: var(--coral);
-  font-size: 10px;
-  letter-spacing: 1.4px;
-  text-decoration: none;
-  transition: .25s;
-}
-
-.learn-more:hover {
-  background: var(--coral);
-  color: white;
-}
-
-/* =========================
-   MINIMAL NAMES + DATE
-   No pink card or box
-========================= */
-
-.invitation-card {
-  position: absolute;
-  z-index: 4;
-  top: 5%;
-  right: 6%;
-  width: 300px;
-  padding: 12px 8px;
-  text-align: center;
-  background: transparent;
-  border: none;
-  box-shadow: none;
-}
-
-.diamond {
-  display: none;
-}
-
-.card-small {
-  font-size: 9px;
-  letter-spacing: 2.2px;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 5px;
-}
-
-.names {
-  font-family: 'Allura', cursive;
-  font-size: clamp(40px, 3.5vw, 49px);
-  line-height: 1.2;
-  font-weight: 400;
-  color: var(--coral);
-  white-space: nowrap;
-}
-
-.card-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 11px;
-  margin-top: 12px;
-}
-
-.card-divider::before,
-.card-divider::after {
-  content: "";
-  height: 1px;
-  width: 25px;
-  background: #e9b6aa;
-}
-
-.card-date {
-  color: var(--muted);
-  font-size: 9px;
-  letter-spacing: 1.2px;
-}
-
-.card-date strong {
-  display: block;
-  color: var(--ink);
-  font-family: 'Playfair Display', serif;
-  font-size: 28px;
-  line-height: 1.2;
-  font-weight: 400;
-  letter-spacing: 0;
-}
-
-.ring-symbol {
-  margin-top: 9px;
-  color: var(--coral);
-  font-size: 23px;
-  letter-spacing: 3px;
-}
-
-/* =========================
-   SINGLE WEDDING PHOTO
-========================= */
-
-.photo-wrap {
-  position: absolute;
-  z-index: 3;
-  right: 0;
-  bottom: 0;
-  width: 49%;
-  height: 74%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  pointer-events: none;
-}
-
-.couple-photo {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: center bottom;
-  mix-blend-mode: multiply;
-}
-
-/* =========================
-   INVITATION MESSAGE
-========================= */
-
-.invitation-note {
-  position: absolute;
-  z-index: 4;
-  left: 29%;
-  bottom: 9%;
-  width: 215px;
-}
-
-.little-hearts {
-  color: var(--coral);
-  font-size: 22px;
-  letter-spacing: 6px;
-  margin-bottom: 9px;
-}
-
-.note-text {
-  font-family: 'Allura', cursive;
-  font-size: 29px;
-  line-height: 1.1;
-}
-
-.note-rule {
-  height: 1px;
-  width: 100%;
-  background: var(--coral);
-  margin: 15px 0 13px;
-}
-
-.venue {
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
-  color: #665b56;
-  font-size: 11px;
-  line-height: 1.8;
-}
-
-.pin {
-  flex: 0 0 19px;
-  width: 19px;
-  height: 19px;
-  background: var(--rose);
-  border-radius: 50% 50% 50% 0;
-  transform: rotate(-45deg);
-  margin-top: 4px;
-  position: relative;
-}
-
-.pin::after {
-  content: "";
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  background: white;
-  border-radius: 50%;
-  left: 6px;
-  top: 6px;
-}
-
-/* =========================
-   TABLET LAYOUT
-========================= */
-
-@media (max-width: 950px) {
-  .hero {
-    height: auto;
-    max-height: none;
-    min-height: 1020px;
-  }
-
-  .hero-inner {
-    min-height: 1020px;
-  }
-
-  .intro {
-    top: 7%;
-    left: 5%;
-    width: 60%;
-  }
-
-  .heading {
-    font-size: clamp(34px, 5vw, 48px);
-  }
-
-  .script-line {
-    font-size: clamp(46px, 6.5vw, 62px);
-  }
-
-  .invitation-card {
-    top: 5%;
-    right: 2%;
-    width: 260px;
-  }
-
-  .names {
-    font-size: 39px;
-  }
-
-  .photo-wrap {
-    width: 58%;
-    height: 56%;
-  }
-
-  .invitation-note {
-    left: 7%;
-    bottom: 7%;
-    width: 205px;
-  }
-
-  .floral-left {
-    width: 190px;
-    left: -65px;
-  }
-
-  .floral-right {
-    width: 145px;
-    right: -65px;
-    top: 44%;
-  }
-}
-
-/* =========================
-   MOBILE LAYOUT
-   No overlapping elements
-========================= */
-
-@media (max-width: 600px) {
-  .hero {
-    min-height: 0;
-    height: auto;
-    max-height: none;
-  }
-
-  .hero-inner {
-    width: 100%;
-    min-height: 0;
-    height: auto;
-    padding: 46px 22px 36px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-  }
-
-  .intro {
-    position: relative;
-    inset: auto;
-    width: 100%;
-    text-align: center;
-    order: 1;
-  }
-
-  .eyebrow {
-    justify-content: center;
-    gap: 8px;
-    font-size: 9px;
-    letter-spacing: 1.6px;
-    margin-bottom: 17px;
-  }
-
-  .eyebrow::before {
-    width: 19px;
-  }
-
-  .heading {
-    font-size: clamp(31px, 8.4vw, 42px);
-    line-height: 1.3;
-    letter-spacing: -.7px;
-  }
-
-  .script-line {
-    font-size: clamp(45px, 11vw, 58px);
-  }
-
-  .learn-more {
-    margin-top: 20px;
-  }
-
-  .invitation-card {
-    position: relative;
-    inset: auto;
-    order: 2;
-    width: 100%;
-    padding: 0 0 5px;
-    margin-top: 2px;
-  }
-
-  .names {
-    font-size: clamp(41px, 11vw, 49px);
-  }
-
-  .photo-wrap {
-    position: relative;
-    inset: auto;
-    order: 3;
-    display: block;
-    width: 100%;
-    height: auto;
-    min-height: 0;
-    margin: -10px 0 0;
-  }
-
-  .couple-photo {
-    width: 100%;
-    height: auto;
-    max-height: 540px;
-    object-fit: contain;
-    object-position: center;
-  }
-
-  .invitation-note {
-    position: relative;
-    inset: auto;
-    order: 4;
-    width: min(100%, 270px);
-    margin-top: -4px;
-    align-self: center;
-  }
-
-  .note-text {
-    font-size: 29px;
-  }
-
-  .venue {
-    font-size: 11px;
-  }
-
-  .floral-left {
-    width: 120px;
-    left: -68px;
-    bottom: 24%;
-  }
-
-  .floral-top {
-    width: 90px;
-    left: auto;
-    right: -25px;
-    top: 20%;
-  }
-
-  .floral-right {
-    width: 105px;
-    right: -55px;
-    top: 54%;
-  }
-
-  .floral-bottom {
-    width: 95px;
-    right: -28px;
-    bottom: 4%;
-  }
-
-  .flower-one {
-    top: 37%;
-    left: 4%;
-    font-size: 22px;
-  }
-
-  .flower-two {
-    top: 73%;
-    left: 8%;
-    font-size: 19px;
-  }
-
-  .flower-three {
-    top: 62%;
-    right: 5%;
-    font-size: 23px;
-  }
-
-  .flower-four {
-    top: 3%;
-    right: 10%;
-    font-size: 17px;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    transition: none !important;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Dr. Meghna & Bibin | A Sacred Union</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&family=Great+Vibes&family=Oswald:wght@300;400&display=swap"
+        rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --ivory: #fffaf2;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+    }
+
+    body {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      background: #d9c4a1;
+    }
+
+    /* FULL-SCREEN WEDDING HERO */
+
+    .wedding-hero {
+      position: relative;
+      isolation: isolate;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      min-height: 100vh;
+      min-height: 100svh;
+      width: 100%;
+
+      overflow: hidden;
+
+      background-image:
+        url("https://i.ibb.co/tpfkfh82/Romantic-Botanical-Floral-Frame.png");
+
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+
+      color: var(--ivory);
+      text-align: center;
+    }
+
+    /* Soft overlay for readable text */
+
+    .wedding-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      background: rgba(88, 63, 39, 0.09);
+    }
+
+    /* CONTENT */
+
+    .hero-content {
+      width: min(1200px, 94%);
+      padding: 55px 20px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      animation: appear 1.5s ease both;
+    }
+
+    /* FRENCH EYEBROW */
+
+    .eyebrow {
+      margin-bottom: 22px;
+      padding-left: 0.65em;
+
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(13px, 1.4vw, 19px);
+      font-weight: 300;
+
+      letter-spacing: 0.65em;
+      text-transform: uppercase;
+    }
+
+    /* COUPLE'S NAMES */
+
+    .couple-names {
+      max-width: 100%;
+
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 400;
+
+      font-size: clamp(56px, 9.3vw, 145px);
+      line-height: 0.96;
+      letter-spacing: -0.045em;
+
+      text-wrap: balance;
+      text-shadow: 0 2px 14px rgba(71, 48, 31, 0.06);
+    }
+
+    /* SCRIPT SUBHEADING */
+
+    .script-heading {
+      margin-top: 25px;
+
+      font-family: "Great Vibes", cursive;
+      font-size: clamp(37px, 5vw, 72px);
+      font-weight: 400;
+      line-height: 1.2;
+    }
+
+    /* DECORATIVE ORNAMENT */
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 15px;
+      margin: 24px 0 20px;
+
+      color: var(--ivory);
+    }
+
+    .ornament-line {
+      width: clamp(35px, 7vw, 95px);
+      height: 1px;
+      background: rgba(255, 250, 242, 0.8);
+    }
+
+    .ornament-symbol {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    /* VEDIC BLESSING */
+
+    .blessing {
+      width: min(690px, 100%);
+
+      font-size: clamp(17px, 1.55vw, 22px);
+      font-weight: 500;
+      line-height: 1.6;
+
+      text-shadow: 0 1px 8px rgba(67, 46, 30, 0.12);
+    }
+
+    /* SANSKRIT BLESSING */
+
+    .sanskrit {
+      margin-top: 25px;
+
+      font-size: clamp(17px, 1.8vw, 25px);
+      line-height: 1.7;
+      letter-spacing: 0.025em;
+    }
+
+    /* FINAL WISH */
+
+    .closing-wish {
+      width: min(620px, 100%);
+      margin-top: 15px;
+
+      font-size: clamp(15px, 1.25vw, 18px);
+      font-style: italic;
+      line-height: 1.6;
+
+      text-shadow: 0 1px 7px rgba(67, 46, 30, 0.12);
+    }
+
+    /* SUBTLE ENTRANCE ANIMATION */
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(15px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* TABLET */
+
+    @media (max-width: 768px) {
+      .wedding-hero {
+        background-position: center center;
+      }
+
+      .hero-content {
+        width: 100%;
+        padding: 65px 22px;
+      }
+
+      .eyebrow {
+        margin-bottom: 25px;
+        letter-spacing: 0.45em;
+      }
+
+      .couple-names {
+        font-size: clamp(53px, 11vw, 82px);
+        line-height: 1.02;
+      }
+
+      .script-heading {
+        margin-top: 22px;
+      }
+
+      .blessing {
+        max-width: 520px;
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 480px) {
+      .hero-content {
+        padding: 60px 19px;
+      }
+
+      .eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.32em;
+      }
+
+      .couple-names {
+        font-size: clamp(47px, 12vw, 64px);
+        letter-spacing: -0.035em;
+      }
+
+      .script-heading {
+        font-size: 43px;
+      }
+
+      .ornament {
+        margin: 21px 0 17px;
+      }
+
+      .blessing {
+        font-size: 17px;
+        line-height: 1.55;
+      }
+
+      .sanskrit {
+        margin-top: 21px;
+        font-size: 18px;
+      }
+
+      .closing-wish {
+        font-size: 15px;
+      }
+    }
+
+    /* SHORT SCREENS */
+
+    @media (max-height: 700px) and (min-width: 769px) {
+      .hero-content {
+        padding-top: 35px;
+        padding-bottom: 35px;
+      }
+
+      .eyebrow {
+        margin-bottom: 12px;
+      }
+
+      .couple-names {
+        font-size: clamp(65px, 8vw, 110px);
+      }
+
+      .script-heading {
+        margin-top: 12px;
+      }
+
+      .ornament {
+        margin: 13px 0;
+      }
+
+      .sanskrit {
+        margin-top: 13px;
+      }
+
+      .closing-wish {
+        margin-top: 8px;
+      }
+    }
+
+    /* REDUCED MOTION ACCESSIBILITY */
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-content {
+        animation: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<main class="hero">
-<div class="hero-inner">
+  <main class="wedding-hero">
 
-  <!-- Large hand-drawn floral branch -->
-  <svg class="floral floral-left"
-       viewBox="0 0 260 360"
-       fill="none"
-       xmlns="http://www.w3.org/2000/svg"
-       aria-hidden="true">
-    <g stroke="#f39b8a" stroke-width="1.5"
-       stroke-linecap="round" stroke-linejoin="round">
+    <section class="hero-content" aria-labelledby="couple-names">
 
-      <path d="M12 350 Q100 215 242 15"/>
+      <p class="eyebrow">
+        Cloches du Mariage
+      </p>
 
-      <path d="M55 285 Q12 252 24 216 Q66 244 55 285Z"
-            fill="#ffdcd5"/>
-      <path d="M86 245 Q45 212 63 178 Q102 207 86 245Z"
-            fill="#ffc8bf"/>
-      <path d="M117 201 Q83 164 108 131 Q139 169 117 201Z"
-            fill="#ffe5df"/>
-      <path d="M151 155 Q126 116 151 86 Q177 119 151 155Z"
-            fill="#ffc8bf"/>
-      <path d="M187 106 Q170 71 194 48 Q217 78 187 106Z"
-            fill="#ffe5df"/>
+      <h1 class="couple-names" id="couple-names">
+        Dr. Meghna &amp; Bibin
+      </h1>
 
-      <path d="M53 310 Q90 291 109 318 Q83 342 53 310Z"
-            fill="#ffc8bf"/>
-      <path d="M93 264 Q132 243 148 268 Q124 291 93 264Z"
-            fill="#ffe5df"/>
-      <path d="M128 218 Q168 198 183 222 Q158 246 128 218Z"
-            fill="#ffc8bf"/>
-      <path d="M163 171 Q200 151 218 175 Q194 198 163 171Z"
-            fill="#ffe5df"/>
+      <p class="script-heading">
+        Two Souls, One Sacred Journey
+      </p>
 
-      <g fill="#ffb5a7">
-        <circle cx="39" cy="258" r="4"/>
-        <circle cx="79" cy="207" r="4"/>
-        <circle cx="130" cy="145" r="4"/>
-        <circle cx="176" cy="92" r="4"/>
-      </g>
-    </g>
-
-    <g transform="translate(72 245)" stroke="#f39b8a"
-       stroke-width="1.2">
-      <ellipse cy="-19" rx="11" ry="23" fill="#ffc8bf"/>
-      <ellipse cy="19" rx="11" ry="23" fill="#ffe5df"/>
-      <ellipse cx="-19" rx="23" ry="11" fill="#ffd6ce"/>
-      <ellipse cx="19" rx="23" ry="11" fill="#ffc1b5"/>
-      <ellipse cx="-13" cy="-13" rx="13" ry="19"
-               transform="rotate(-45 -13 -13)" fill="#ffe5df"/>
-      <ellipse cx="13" cy="-13" rx="13" ry="19"
-               transform="rotate(45 13 -13)" fill="#ffc8bf"/>
-      <circle r="7" fill="#f39b8a"/>
-      <circle r="3" fill="#fff"/>
-    </g>
-
-    <g transform="translate(124 178) scale(.7)"
-       stroke="#f39b8a" stroke-width="1.2">
-      <ellipse cy="-19" rx="11" ry="23" fill="#ffc8bf"/>
-      <ellipse cy="19" rx="11" ry="23" fill="#ffe5df"/>
-      <ellipse cx="-19" rx="23" ry="11" fill="#ffd6ce"/>
-      <ellipse cx="19" rx="23" ry="11" fill="#ffc1b5"/>
-      <circle r="7" fill="#f39b8a"/>
-      <circle r="3" fill="#fff"/>
-    </g>
-  </svg>
-
-  <!-- Light botanical detail -->
-  <svg class="floral floral-top"
-       viewBox="0 0 180 220"
-       fill="none"
-       xmlns="http://www.w3.org/2000/svg"
-       aria-hidden="true">
-    <g stroke="#f39b8a" stroke-width="1.5">
-      <path d="M10 210 Q80 100 166 10"/>
-      <path d="M43 166 Q10 139 27 112 Q58 139 43 166Z"
-            fill="#ffc8bf"/>
-      <path d="M70 128 Q42 99 63 72 Q85 101 70 128Z"
-            fill="#ffe5df"/>
-      <path d="M98 90 Q79 61 102 36 Q121 64 98 90Z"
-            fill="#ffc8bf"/>
-      <path d="M57 179 Q88 163 103 185 Q80 206 57 179Z"
-            fill="#ffe5df"/>
-      <path d="M88 136 Q119 119 134 141 Q114 162 88 136Z"
-            fill="#ffc8bf"/>
-    </g>
-  </svg>
-
-  <!-- Floral branch on the right -->
-  <svg class="floral floral-right"
-       viewBox="0 0 230 340"
-       fill="none"
-       xmlns="http://www.w3.org/2000/svg"
-       aria-hidden="true">
-    <g stroke="#f39b8a" stroke-width="1.5">
-      <path d="M12 330 Q104 190 218 12"/>
-      <path d="M44 286 Q9 258 24 228 Q56 251 44 286Z"
-            fill="#ffe5df"/>
-      <path d="M74 243 Q40 210 59 181 Q87 210 74 243Z"
-            fill="#ffc8bf"/>
-      <path d="M103 200 Q78 164 101 137 Q127 168 103 200Z"
-            fill="#ffe5df"/>
-      <path d="M135 155 Q115 120 140 92 Q162 122 135 155Z"
-            fill="#ffc8bf"/>
-      <path d="M165 110 Q151 76 174 52 Q196 81 165 110Z"
-            fill="#ffe5df"/>
-      <path d="M47 304 Q81 285 98 308 Q76 330 47 304Z"
-            fill="#ffc8bf"/>
-      <path d="M83 261 Q117 242 134 264 Q111 286 83 261Z"
-            fill="#ffe5df"/>
-      <path d="M116 215 Q151 197 168 220 Q145 242 116 215Z"
-            fill="#ffc8bf"/>
-      <path d="M147 169 Q180 152 196 174 Q175 196 147 169Z"
-            fill="#ffe5df"/>
-      <g fill="#ffb5a7">
-        <circle cx="37" cy="255" r="4"/>
-        <circle cx="91" cy="178" r="4"/>
-        <circle cx="153" cy="104" r="4"/>
-      </g>
-    </g>
-  </svg>
-
-  <!-- Small bottom floral detail -->
-  <svg class="floral floral-bottom"
-       viewBox="0 0 180 220"
-       fill="none"
-       xmlns="http://www.w3.org/2000/svg"
-       aria-hidden="true">
-    <g stroke="#f39b8a" stroke-width="1.5">
-      <path d="M8 215 Q81 107 169 8"/>
-      <path d="M42 169 Q9 140 28 113 Q56 142 42 169Z"
-            fill="#ffc8bf"/>
-      <path d="M73 129 Q43 101 64 73 Q88 101 73 129Z"
-            fill="#ffe5df"/>
-      <path d="M101 90 Q80 60 104 36 Q124 64 101 90Z"
-            fill="#ffc8bf"/>
-      <path d="M54 183 Q86 166 101 189 Q79 210 54 183Z"
-            fill="#ffe5df"/>
-      <path d="M88 139 Q119 121 135 143 Q113 164 88 139Z"
-            fill="#ffc8bf"/>
-    </g>
-  </svg>
-
-  <span class="flower-detail flower-one">✿</span>
-  <span class="flower-detail flower-two">❀</span>
-  <span class="flower-detail flower-three">✿</span>
-  <span class="flower-detail flower-four">❀</span>
-
-  <!-- Hero text -->
-  <section class="intro">
-    <div class="eyebrow">A little celebration of love</div>
-
-    <h1 class="heading">
-      WE BELIEVE
-      <span class="script">With Love</span>
-    </h1>
-
-    <div class="script-line">
-      that <span class="script">Love</span> is a
-    </div>
-
-    <h2 class="heading">
-      CELEBRATION
-    </h2>
-
-    <a class="learn-more" href="#wedding-details">
-      OUR INVITATION <span>◆</span>
-    </a>
-  </section>
-
-  <!-- Minimal text-only wedding announcement -->
-  <section class="invitation-card"
-           aria-label="Meghna and Bibin's wedding">
-
-    <p class="card-small">Together with our families</p>
-
-    <h2 class="names">Meghna &amp; Bibin</h2>
-
-    <div class="card-divider">
-      <div class="card-date">SUNDAY</div>
-
-      <div class="card-date">
-        <span>OCT</span>
-        <strong>31</strong>
-        <span>2026</span>
+      <div class="ornament" aria-hidden="true">
+        <span class="ornament-line"></span>
+        <span class="ornament-symbol">❧</span>
+        <span class="ornament-line"></span>
       </div>
 
-      <div class="card-date">AT 11:00</div>
-    </div>
+      <p class="blessing">
+        As two hearts unite in the sacred bond of marriage,
+        may the blessings of the Vedas illuminate your path.
+        May your life together be filled with Dharma,
+        Artha, Kama and Moksha — harmony, prosperity,
+        love and spiritual fulfilment.
+      </p>
 
-    <div class="ring-symbol" aria-hidden="true">♡ ♡</div>
-  </section>
+      <p class="sanskrit" lang="sa">
+        ॐ सह नाववतु । सह नौ भुनक्तु ।
+        <br>
+        सह वीर्यं करवावहै ॥
+      </p>
 
-  <!-- The only photograph on the page -->
-  <div class="photo-wrap">
-    <img
-      class="couple-photo"
-      src="https://i.ibb.co/Tzsgr14/photo-2026-10-21-20-01-16.jpg"
-      alt="Meghna and Bibin"
-    >
-  </div>
+      <p class="closing-wish">
+        May the sacred fire bear witness to your vows,
+        may every season deepen your companionship,
+        and may love, grace and divine blessings
+        guide Dr. Meghna and Bibin throughout a beautiful life together.
+      </p>
 
-  <!-- Invitation message -->
-  <section class="invitation-note" id="wedding-details">
+    </section>
 
-    <div class="little-hearts">♥ ˚ ♥</div>
-
-    <p class="note-text">
-      We are so happy<br>
-      to invite you to<br>
-      celebrate our love.
-    </p>
-
-    <div class="note-rule"></div>
-
-    <div class="venue">
-      <span class="pin" aria-hidden="true"></span>
-      <span>
-        We are signing into a new life<br>
-        @ Taliparamba Sub Registrar Office
-      </span>
-    </div>
-
-  </section>
-
-</div>
-</main>
+  </main>
 
 </body>
 </html>
